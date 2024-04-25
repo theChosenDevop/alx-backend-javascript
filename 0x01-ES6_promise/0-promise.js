@@ -1,7 +1,8 @@
 export default function getResponseFromAPI() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const data = 'foo';
-    setTimeout(() => { resolve(data);
-    }, 1000)
-  })
+    setTimeout(() => {
+      resolve(data);
+    }, 1000);
+  });
 }

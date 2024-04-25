@@ -2,13 +2,13 @@ export default function getResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
     const msgSucc = {
       status: 200,
-      body: 'Success'
-    }
+      body: 'Success',
+    };
     const msgFail = 'The fake API is not working currently';
     if (success) {
-	    resolve(msgSucc);
+      resolve(msgSucc);
     } else {
-	    reject (new Error(msgFail));
+      reject(new Error(msgFail));
     }
-  })
+  });
 }
