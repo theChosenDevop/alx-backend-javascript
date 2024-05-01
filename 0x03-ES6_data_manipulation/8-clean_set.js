@@ -5,7 +5,9 @@
  * @returns A string of all the set values that start with a specific string(stratString)
  */
 export default function cleanSet(set, startString) {
-  if (startString === undefined || startString === '') return '';
+  if (startString === undefined || startString === '') {
+    return '';
+  }
 
   const filteredString = [...set].filter((string) => string.startsWith(startString));
 
