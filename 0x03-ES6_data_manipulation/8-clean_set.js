@@ -9,5 +9,5 @@ export default function cleanSet(set, startString) {
 
   const filteredString = [...set].filter((string) => string.startsWith(startString));
 
-  return filteredString.map((string) => (string ? string.slice(startString) : '')).join('-');
+  return filteredString.map((string) => (string ? string.slice(startString.length) : '')).join('-');
 }
