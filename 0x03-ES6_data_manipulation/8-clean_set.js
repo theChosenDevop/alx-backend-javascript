@@ -9,7 +9,7 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
-  const filteredString = [...set].filter((string) => string.startsWith(startString));
+  const filteredString = [...set].filter((string) => string !== undefined ? string.startsWith(startString));
 
   return filteredString.map((string) => (string ? string.slice(startString.length) : '')).join('-');
 }
