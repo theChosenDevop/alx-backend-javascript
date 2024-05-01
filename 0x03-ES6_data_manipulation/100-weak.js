@@ -9,5 +9,11 @@ export function queryAPI(endpoint) {
     throw new Error('Invalid endpoint');
   }
 
-  const endpointIncrement = weak
+  const endpointIncrement = weakMap.get(endpoint) || 0;
+
+  weakMap.set(endpoint, endpointIncrement + 1);
+
+  if (endpointIncrement >= 4) {
+    throw new Error('Endpoint load is high');
+  }
 }
