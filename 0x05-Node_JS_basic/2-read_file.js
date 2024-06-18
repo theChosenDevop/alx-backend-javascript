@@ -6,9 +6,9 @@ function countStudents(file) {
   let student_data = {};
   data = data.split('\n')
   data.shift();
-// console.log(data);
+  // console.log(data);
   data.pop();
-//  console.log(data.length);
+  //  console.log(data.length);
   let first_name, last_name, field, age;
   data.forEach((value) => {
     const [first_name, last_name, age, field] = value.split(',');
@@ -19,6 +19,11 @@ function countStudents(file) {
         student_data[field].push(first_name);
       }
   });
-// console.log(student_data);
-console.log("Number of students: " + data.length);
+  // console.log(student_data);
+  console.log("Number of students: " + data.length);
+for (const [key, value] of Object.entries(student_data)) {
+  console.log(`Number of students in ${key}: ${value.length}, List: ${value.join(', ')}`);
+}
+}
+
 module.exports = countStudents;
