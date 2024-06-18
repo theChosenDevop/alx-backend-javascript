@@ -1,30 +1,27 @@
-// reads stabdard input
-const displayMessage = require('./0-console');
-
-const msg = 'Welcome to Holberton School, what is your name?';
+// script uses child process to read from commandline
+const msg = ['Welcome to Holberton School, what is your name?'];
 
 const endMsg = 'This important software is now closing';
 
-displayMessage(msg);
+// Creates an instance of the child_process
+const { spawn } = require('child_process');
 
-process.stdin.setEncoding('utf8');
-if (process.stdin.isTTY) {
-  process.stdin.on('readable', () => {
-    const userInput = process.stdin.read();
-    if (userInput !== null) {
-      const input = userInput.trim();
-      displayMessage(`Your name is: ${input}`);
-      process.stdin.end();
-    }
+const output = spawn('echo', msg);
+
+// write  to stdout output
+output.stdout.on('data', (data) => {
+  process.stdout.write(data);
+
+  // set standard input to readable format string
+  process.stdin.setEncoding('utf-8');
+
+  // output user input
+  process.stdin.on('data', (name) => {
+    process.stdout.write(`Your name is: ${name}`);
   });
-} else {
-  let input = '';
-  process.stdin.on('data', (data) => {
-    input += data;
+
+  // close with an end message through pipe (non-interactive)
+  process.stdin.on('end', () => {
+    process.stdout.write(`${endMsg}\n`);
   });
-  process.stdin.on('end', (end) => {
-    input = input.trim();
-    displayMessage(`Your name is: ${input}`);
-    displayMessage(endMsg);
-  });
-}
+});
