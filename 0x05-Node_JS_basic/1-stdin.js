@@ -14,7 +14,6 @@ if (process.stdin.isTTY) {
     if (userInput !== null) {
       const input = userInput.trim();
       displayMessage(`Your name is: ${input}`);
-      displayMessage(endMsg);
       process.stdin.end();
     }
   });
