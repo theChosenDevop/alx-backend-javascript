@@ -11,12 +11,12 @@ function countStudents (file) {
     data.pop();
     //  console.log(data.length);
     data.forEach((value) => {
-      const [firstName, lastName, age, field] = value.split(',');
-      if (firstName && lastName && age && field) {
+      const [firstname, lastname, age, field] = value.split(',');
+      if (firstname && lastname && age && field) {
         if (!studentData[field]) {
           studentData[field] = [];
         }
-        studentData[field].push(firstName);
+        studentData[field].push(firstname);
       }
     });
     // console.log(student_data);
