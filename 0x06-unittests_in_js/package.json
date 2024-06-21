@@ -1,0 +1,19 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "A project of ALX",
+  "main": "0-calcul.js",
+  "scripts": {
+    "start": "node 1-stdin-js",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "theChosenDevop",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}
