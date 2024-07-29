@@ -1,7 +1,7 @@
 // Calculate Module
 
-const CalculateNumber = (int1, int2) => {
-  return Math.round(int1) + Math.round(int2);
+const CalculateNumber = (a, b) => {
+  return Math.round(a) + Math.round(b);
 };
 
 module.exports = CalculateNumber;
