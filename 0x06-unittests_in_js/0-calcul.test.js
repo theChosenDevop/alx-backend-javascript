@@ -19,3 +19,10 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
 });
+
+// Test Suite for rounding the second number
+describe('rounding the second number', () => {
+  it('should return 5 when inputs 1 and 3.7', () => {
+    assert.strictEqual(calculateNumber(1, 3.7), 5);
+  });
+});
