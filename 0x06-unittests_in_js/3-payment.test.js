@@ -1,26 +1,25 @@
-/* test calculateNumber */
+/**
+ * Test the payment called Utils.calculateNumber
+ */
 const chai = require('chai');
 const expect = chai.expect;
 const sinon = require('sinon');
+const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
-const utils = require('./utils');
 
-describe("sendPaymentRequestToApi", () => {
-  let spy;
-
-  beforeEach(() => {
-    spy = sinon.spy(utils, 'calculateNumber')});
-  afterEach(() => {
+describe('sendPaymentRequestToApi', function() {
+  beforeEach(function() {
+    sinon.spy(Utils, 'calculateNumber');
+  });
+  afterEach(function() {
     sinon.restore();
   });
-
-  it('validate utils.calculateNumber behaviour when sendPaymentrequestApi is invoked',
-    () => {
+  it("validate the usage of the `Utils.calculateNumber` function", function() {
     sendPaymentRequestToApi(100, 20);
-    expect(utils.calculateNumber.calledOnce).to.be.true;
-    expect(utils.calculateNumber.callCount).to.be.equal(1);
-    expect(utils.calculateNumber.called).to.be.true;
-    expect(utils.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
-    expect(utils.calculateNumber.firstCall.arg[0]).to.equal("SUM");
-    });
+    expect(Utils.calculateNumber.called).to.be.true;
+    expect(Utils.calculateNumber.calledOnce).to.be.true;
+    expect(Utils.calculateNumber.callCount).to.be.equal(1);
+    expect(Utils.calculateNumber.firstCall.args[0]).to.equal("SUM");
+    expect(Utils.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
+  });
 });
