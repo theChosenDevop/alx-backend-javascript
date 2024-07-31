@@ -4,15 +4,15 @@ const chai = require('chai');
 const { expect } = chai;
 
 describe('Index page', () => {
-  it('localhost response', (done) => {
-    try{
+  it('response', (done) => {
+    try {
       request('http://localhost:7865/', (err, res, body) => {
-	if (err) throw err;
-	expect(body).to.be.equal('Welcome to the payment system');
-	expect(res.statusCOde).to.be.equal(200);
-	done();
+        if (err) throw err;
+        expect(body).to.be.equal('Welcome to the payment system');
+        expect(res.statusCode).to.be.equal(200);
+        done();
       });
-    } catch(err) {
+    } catch (err) {
       done(err);
     }
   });
