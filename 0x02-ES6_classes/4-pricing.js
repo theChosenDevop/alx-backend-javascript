@@ -21,13 +21,12 @@ class Pricing {
   }
 
   displayFullPrice () {
-    return (
-      "Pricing" {
-	 "_amount": this._amount,
-	 "_currency": "Currency" {
-	   "_code": this._currency.code, "_name": this._currency.name
-	 }
-      }
-    );
+    return `${this._amount} ${this._currency.name} ${this._currency.code}`;
+  }
+
+  static convertPrice (amount, conversionRate) {
+    return amount * conversionRate;
   }
 }
+
+export default Pricing;
