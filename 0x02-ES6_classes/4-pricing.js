@@ -1,18 +1,18 @@
 class Pricing {
-  constructor (amount, currency) {
+  constructor(amount, currency) {
     this._amount = amount;
     this._currency = currency;
   }
 
-  get amount () {
+  get amount() {
     return this._amount;
   }
 
-  set amount (newAmount) {
+  set amount(newAmount) {
     this._amount = newAmount;
   }
 
-  get currency () {
+  get currency() {
     return this._currency;
   }
 
@@ -20,11 +20,11 @@ class Pricing {
     this._currency = newCurrency;
   }
 
-  displayFullPrice () {
+  displayFullPrice() {
     return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
 
-  static convertPrice (amount, conversionRate) {
+  static convertPrice(amount, conversionRate) {
     return amount * conversionRate;
   }
 }
