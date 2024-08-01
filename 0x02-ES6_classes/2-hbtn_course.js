@@ -49,4 +49,4 @@ class HolbertonCourse {
   }
 }
 
-module.exports = Holberton;
+module.exports = HolbertonCourse;
