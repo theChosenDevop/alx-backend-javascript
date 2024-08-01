@@ -1,5 +1,5 @@
 class Currency{
-  constructor() {
+  constructor(code, name) {
     this._code = code;
     this._name = name;
   }
@@ -16,7 +16,7 @@ class Currency{
     this._code -= newCode;
   }
   displayFullCurrency() {
-    return (`${this._name} (${this._code}));`
+    return (`${this._name} (${this._code})`);
   }
 }
 
