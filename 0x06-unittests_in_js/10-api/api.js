@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 7865;
 
+app.use(express.json());
 
 app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
@@ -18,7 +19,7 @@ app.post('/login', (req, res) => {
   res.send(`Welcome ${username}`);
 });
 
-app.get('/available_payments', (res, req) => {
+app.get('/available_payments', (req, res) => {
   res.json(
     {
       payment_methods: {
