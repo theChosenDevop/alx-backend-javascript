@@ -14,6 +14,7 @@ class HolbertonCourse {
     this._length = length;
     this._students = students;
   }
+
   get name() {
     return this._name;
   }
@@ -40,12 +41,12 @@ class HolbertonCourse {
     return this._students;
   }
 
-  set students(newStudent) => {
-    if (!Array.isArray(newStudents) || newStudents.some((newStudent) => typeof newStudents !== 'string') {
-      throw new TypeError('Students must an array of strings');
+  set students(newStudents) {
+    if (!Array.isArray(newStudents) || newStudents.some((newStudent) => typeof newStudent !== 'string')) {
+      throw new TypeError('Students must be an array of strings');
     }
     this._students = newStudents;
   }
 }
 
-export default HolbertonCourse;
+module.exports = Holberton;
