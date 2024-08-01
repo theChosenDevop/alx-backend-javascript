@@ -15,8 +15,8 @@ app.get('/cart/:id([0-9]+)', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const { username } = req.body;
-  res.send(`Welcome ${username}`);
+  const { userName } = req.body;
+  res.send(`Welcome ${userName}`);
 });
 
 app.get('/available_payments', (req, res) => {
